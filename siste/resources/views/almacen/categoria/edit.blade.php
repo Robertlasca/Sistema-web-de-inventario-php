@@ -2,7 +2,7 @@
 @section ('contenido')
 
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		<h3>Nueva categoría</h3>
+		<h3>Editar categoría: {{$categoria->nombre}} </h3>
 		@if(count($errors)>0)
 		<div class="alert alert-danger">
 			<ul>
@@ -15,20 +15,22 @@
 		</div>
 		@endif
 
-		<form method="POST" action="{{ url('almacen/categoria') }}" autocomplete="off" >
+		
+		<form method="POST" action="{{ route('almacen.categoria.update', $categoria->idcategoria) }}">
+    	@method('PATCH')
 		@csrf
 			<div class="form-group">
 				<label for="nombre">
 					Nombre
 				</label>
-				<input type="text" name="nombre" class="form-control" placeholder="Servicio">
+				<input type="text" name="nombre" class="form-control" value="{{$categoria->nombre}}" placeholder="Servicio">
 			</div>
 
 			<div class="form-group">
 				<label for="descripcion">
 					Descripcion
 				</label>
-				<input type="text" name="descripcion" class="form-control" placeholder="Descripcion">
+				<input type="text" name="descripcion" class="form-control" value="{{$categoria->descripcion}}"placeholder="Descripcion">
 			</div>
 
 			<div class="form-group">
@@ -44,3 +46,4 @@
 		
 	</div>
 @endsection
+

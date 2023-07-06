@@ -32,7 +32,8 @@
 					<td>{{$cat->nombre}}</td>
 					<td>{{$cat->descripcion}}</td>
 					<td>
-						<a href="">
+						<a href="{{ route('almacen.categoria.edit', $cat->idcategoria) }}">
+
 						<button class="btn btn-info">
 							Editar
 						</button>

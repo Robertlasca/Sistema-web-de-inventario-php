@@ -22,3 +22,7 @@ Route::resource('almacen/categoria', CategoriaController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('almacen/categoria/{idcategoria}/edit', 'CategoriaController@edit')->name('almacen.categoria.edit');
+Route::patch('almacen/categoria/{idcategoria}', 'CategoriaController@update')->name('almacen.categoria.update');
+
+
