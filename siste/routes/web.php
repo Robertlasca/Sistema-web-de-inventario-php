@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ArticuloController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -19,10 +20,17 @@ Route::get('/', function () {
 });
 
 Route::resource('almacen/categoria', CategoriaController::class);
+Route::resource('almacen/articulo', ArticuloController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('almacen/categoria/{idcategoria}/edit', 'CategoriaController@edit')->name('almacen.categoria.edit');
 Route::patch('almacen/categoria/{idcategoria}', 'CategoriaController@update')->name('almacen.categoria.update');
 Route::delete('almacen/categoria/{idcategoria}', 'CategoriaController@destroy');
+
+
+//Rutas del controlador Articulo
+Route::get('/almacen/articulo/{idarticulo}/edit','ArticuloController@edit')->name('almacen.articulo.edit');
+Route::patch('almacen/articulo/{idarticulo}','ArticuloController@update')->name('almacen.articulo.update');
+Route::delete('almacen/articulo/{idarticulo}','ArticuloController@destroy');
 
