@@ -22,6 +22,7 @@
 				<thead>
 					<th>Id</th>
 					<th>Nombre</th>
+					<th>Dirección</th>
 					<th>Tipo Doc.</th>
 					<th>Número Doc.</th>
 					<th>Teléfono</th>
@@ -33,6 +34,7 @@
 				<tr>
 					<td>{{$per->idpersona}}</td>
 					<td>{{$per->nombre}}</td>
+					<td>{{$per->direccion}}</td>
 					<td>{{$per->tipo_documento}}</td>
 					<td>{{$per->num_documento}}</td>
 					<td>{{$per->telefono}}</td>
