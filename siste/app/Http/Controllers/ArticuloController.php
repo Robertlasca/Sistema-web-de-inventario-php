@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Articulo;
 use Illuminate\Support\Facades\Redirect;
-use App\Http\Requests\ArticuloFormRequests;
+use App\Http\Requests\ArticuloFormRequest;
 use DB;
 class ArticuloController extends Controller
 {
@@ -64,7 +64,7 @@ class ArticuloController extends Controller
     public function edit($id){
         $articulo=Articulo::findOrFail($id);
         $categorias=DB::table('categoria')->where('condicion','=','1')->get();
-        return view("almacen.articulo.edit",["articulo"=>$articulos,"categorias"=>$categorias]);
+        return view("almacen.articulo.edit",["articulo"=>$articulo,"categorias"=>$categorias]);
 
     }
 

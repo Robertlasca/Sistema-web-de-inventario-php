@@ -11,7 +11,7 @@ class ArticuloFormRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -27,7 +27,7 @@ class ArticuloFormRequest extends FormRequest
             'nombre'=>'required|max:100',
             'stock'=>'required|numeric',
             'descripcion'=>'max:512',
-            'imagen'=>'mimes:jpeg,bmp,png'
+            'imagen'=>'required | mimes:jpeg,jpg,png | max:1000'
         ];
     }
 }
