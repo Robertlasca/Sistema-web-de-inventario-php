@@ -1,5 +1,5 @@
 <div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog" tabindex="-1" id="modal-delete-{{$per->idpersona}}">
-	<form action="{{ action('ClienteController@destroy', $per->idpersona) }}" method="POST">
+	<form action="{{ action('ProveedorController@destroy', $per->idpersona) }}" method="POST">
     @method('DELETE')
     @csrf
 		<div class="modal-dialog">

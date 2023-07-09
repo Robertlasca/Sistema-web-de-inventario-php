@@ -4,11 +4,11 @@
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 		<h3>
-			Listado de Cliente<a href="cliente/create"> <button class="btn btn-success">
+			Listado de Proveedores<a href="cliente/create"> <button class="btn btn-success">
 				Nuevo
 			</button></a>
 		</h3>
-@include('ventas/cliente/search')
+@include('compras/proveedor/search')
 		
 		
 	</div>
@@ -40,7 +40,7 @@
 					<td>{{$per->telefono}}</td>
 					<td>{{$per->email}}</td>
 					<td>
-						<a href="{{ route('ventas.cliente.edit', $per->idpersona) }}">
+						<a href="{{ route('compras.proveedor.edit', $per->idpersona) }}">
 
 						<button class="btn btn-info">
 							Editar
@@ -55,7 +55,7 @@
 						</a>
 					</td>
 				</tr>
-				@include('ventas/cliente/modal')
+				@include('compras/proveedor/modal')
 				 @endforeach
 			</table>
 		</div>

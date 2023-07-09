@@ -1,4 +1,4 @@
-<form method="GET" action="{{ url('ventas/cliente') }}" autocomplete="off" role="search">
+<form method="GET" action="{{ url('compras/proveedor') }}" autocomplete="off" role="search">
     @csrf
     <div class="form-group">
         <div class="input-group">

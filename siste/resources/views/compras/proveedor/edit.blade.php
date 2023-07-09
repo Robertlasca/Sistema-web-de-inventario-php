@@ -17,7 +17,7 @@
 		</div>
 	</div>
 		
-		<form method="POST" action="{{ route('ventas.cliente.update', $persona->idpersona) }}" >
+		<form method="POST" action="{{ route('compras.proveedor.update', $persona->idpersona) }}" >
     	@method('PATCH')
 		@csrf
 
