@@ -14,13 +14,13 @@
 					</button>
 
 					<h4 class="modal-title">
-						Eliminar cliente
+						Eliminar proveedor
 					</h4>
 					
 				</div>
 
 				<div class="modal-body">
-					<p> Confirme si deses eliminar el cliente</p>
+					<p> Confirme si deses eliminar el proveedor</p>
 				</div>
 
 				<div class="modal-footer">

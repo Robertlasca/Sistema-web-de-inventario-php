@@ -44,7 +44,7 @@ Route::patch('ventas/cliente/{idpersona}','ClienteController@update')->name('ven
 Route::delete('ventas/cliente/{idpersona}','ClienteController@destroy');
 
 //Rutas del controlador Proveedor
-Route::get('/compras/proveedor/{idpersona}/edit','ProveedorController@edit')->name('ventas.cliente.edit');
-Route::patch('/compras/proveedor/{idpersona}','ProveedorController@update')->name('ventas.cliente.update');
+Route::get('/compras/proveedor/{idpersona}/edit','ProveedorController@edit')->name('compras.proveedor.edit');
+Route::patch('/compras/proveedor/{idpersona}','ProveedorController@update')->name('compras.proveedor.update');
 Route::delete('/compras/proveedor/{idpersona}','ProveedorController@destroy');
 
