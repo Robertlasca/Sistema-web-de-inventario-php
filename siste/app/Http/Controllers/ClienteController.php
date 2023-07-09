@@ -48,7 +48,7 @@ class ClienteController extends Controller
         $persona->email=$request->get('email');
 
         $persona->save();
-        return Redirect::('ventas/cliente');
+        return Redirect::to('ventas/cliente');
     }
 
     public function show($id){
@@ -77,6 +77,6 @@ class ClienteController extends Controller
         $persona=Persona::findOrFail($id);
         $persona->tipo_persona='Inactivo';
         $persona->update();
-        $return Redirect::to('ventas/cliente');
+        return Redirect::to('ventas/cliente');
     }
 }

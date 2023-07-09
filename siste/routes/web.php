@@ -1,7 +1,7 @@
 <?php
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ArticuloController;
-use App\Http\Controllers\PersonaController;
+use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +21,9 @@ Route::get('/', function () {
 
 Route::resource('almacen/categoria', CategoriaController::class);
 Route::resource('almacen/articulo', ArticuloController::class);
+Route::resource('ventas/cliente', ClienteController::class);
 Auth::routes();
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('almacen/categoria/{idcategoria}/edit', 'CategoriaController@edit')->name('almacen.categoria.edit');
@@ -35,7 +37,7 @@ Route::patch('almacen/articulo/{idarticulo}','ArticuloController@update')->name(
 Route::delete('almacen/articulo/{idarticulo}','ArticuloController@destroy');
 
 //Rutas del controlador Persona
-Route::get('/ventas/cliente/{idpersona}/edit','PersonaController@edit')->name('ventas.cliente.edit');
-Route::patch('ventas/cliente/{idpersona}','PersonaController@update')->name('ventas.cliente.update');
-Route::delete('ventas/cliente/{idpersona}','PersonaController@destroy');
+Route::get('/ventas/cliente/{idpersona}/edit','ClienteController@edit')->name('ventas.cliente.edit');
+Route::patch('ventas/cliente/{idpersona}','ClienteController@update')->name('ventas.cliente.update');
+Route::delete('ventas/cliente/{idpersona}','ClienteController@destroy');
 
