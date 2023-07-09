@@ -2,6 +2,7 @@
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ArticuloController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ProveedorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,7 @@ Route::get('/', function () {
 Route::resource('almacen/categoria', CategoriaController::class);
 Route::resource('almacen/articulo', ArticuloController::class);
 Route::resource('ventas/cliente', ClienteController::class);
+Route::resource('compras/proveedor', ProveedorController::class);
 Auth::routes();
 
 
@@ -40,4 +42,9 @@ Route::delete('almacen/articulo/{idarticulo}','ArticuloController@destroy');
 Route::get('/ventas/cliente/{idpersona}/edit','ClienteController@edit')->name('ventas.cliente.edit');
 Route::patch('ventas/cliente/{idpersona}','ClienteController@update')->name('ventas.cliente.update');
 Route::delete('ventas/cliente/{idpersona}','ClienteController@destroy');
+
+//Rutas del controlador Proveedor
+Route::get('/compras/proveedor/{idpersona}/edit','ProveedorController@edit')->name('ventas.cliente.edit');
+Route::patch('/compras/proveedor/{idpersona}','ProveedorController@update')->name('ventas.cliente.update');
+Route::delete('/compras/proveedor/{idpersona}','ProveedorController@destroy');
 
