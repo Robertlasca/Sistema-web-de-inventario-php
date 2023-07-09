@@ -1,7 +1,7 @@
 <?php
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ArticuloController;
-
+use App\Http\Controllers\PersonaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,4 +33,9 @@ Route::delete('almacen/categoria/{idcategoria}', 'CategoriaController@destroy');
 Route::get('/almacen/articulo/{idarticulo}/edit','ArticuloController@edit')->name('almacen.articulo.edit');
 Route::patch('almacen/articulo/{idarticulo}','ArticuloController@update')->name('almacen.articulo.update');
 Route::delete('almacen/articulo/{idarticulo}','ArticuloController@destroy');
+
+//Rutas del controlador Persona
+Route::get('/ventas/cliente/{idpersona}/edit','PersonaController@edit')->name('ventas.cliente.edit');
+Route::patch('ventas/cliente/{idpersona}','PersonaController@update')->name('ventas.cliente.update');
+Route::delete('ventas/cliente/{idpersona}','PersonaController@destroy');
 
