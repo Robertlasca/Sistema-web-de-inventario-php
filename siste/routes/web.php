@@ -3,6 +3,7 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ArticuloController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProveedorController;
+use App\Http\Controllers\IngresoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,7 @@ Route::resource('almacen/categoria', CategoriaController::class);
 Route::resource('almacen/articulo', ArticuloController::class);
 Route::resource('ventas/cliente', ClienteController::class);
 Route::resource('compras/proveedor', ProveedorController::class);
+Route::resource('compras/ingreso', IngresoController::class);
 Auth::routes();
 
 
@@ -47,4 +49,9 @@ Route::delete('ventas/cliente/{idpersona}','ClienteController@destroy');
 Route::get('/compras/proveedor/{idpersona}/edit','ProveedorController@edit')->name('compras.proveedor.edit');
 Route::patch('/compras/proveedor/{idpersona}','ProveedorController@update')->name('compras.proveedor.update');
 Route::delete('/compras/proveedor/{idpersona}','ProveedorController@destroy');
+
+//Rutas del controlador Ingreso
+Route::get('/compras/ingreso/{idingreso}/edit','IngresoController@edit')->name('compras.ingreso.show');
+Route::patch('/compras/ingreso/{idingreso}','IngresoController@update')->name('compras.ingreso.update');
+Route::delete('/compras/ingreso/{idingreso}','IngresoController@destroy');
 
